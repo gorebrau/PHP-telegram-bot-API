@@ -1,5 +1,5 @@
 # PHP-telegram-bot-API
-Unofficial PHP Class for Telegram-API
+Unofficial PHP Class for Telegram-Bot-API
 =====================================
 
 Example ussage
