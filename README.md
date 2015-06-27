@@ -2,26 +2,33 @@
 Unofficial PHP Class for Telegram-API
 
 Example ussage:
-
+```
 require('telegram-bot-api.php');
 
 $token = 'YOUR BOT TOKEN';
 $bot = new telegram_bot($token);
-
+```
 
 For setting webhook (you only need to run this command once)
+```
 $bot->set_webhook('http:/....'); //Your url
+```
 For unset:
+```
 $bot->set_webhook();
-
+```
 
 Readding from webhook:
+```
 $message =  $bot->read_post_message(); //Returns a message object
-
+```
 Readding from message inbox:
+```
 $list_message = $bot->get_updates(); //Return an array of message objects
+```
 
 Create custom keyboard:
+```
 $keyboard = new ReplyKeyboardMarkup(TRUE, TRUE);
 $options[0][0]="a";
 $options[1][0]="b";
@@ -29,7 +36,7 @@ $options[2][0]="c";
 $options[3][0]="d";
 $keyboard->add_option($options);
 $bot->send_message($user_id, $text_message, null, json_encode($keyboard));
-
+```
 
 List of methods:
 send_action(string:usser_id, string:action_name)
@@ -45,6 +52,7 @@ forward_message(string:from_usser_id,string:usser_id,string:message_id)
 
 Some message structure:
 Text:
+```
 stdClass Object
 (
     [update_id] =>
@@ -70,8 +78,9 @@ stdClass Object
         )
 
 )
-
+```
 Location:
+```
 stdClass Object
 (
     [update_id] =>
@@ -102,9 +111,10 @@ stdClass Object
         )
 
 )
-
+```
 
 Sticker:
+```
 stdClass Object
 (
     [update_id] => 
@@ -145,8 +155,9 @@ stdClass Object
         )
 
 )
-
+```
 Audio:
+```
 stdClass Object
 (
     [update_id] =>
@@ -179,3 +190,4 @@ stdClass Object
         )
 
 )
+```
